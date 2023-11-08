@@ -1,3 +1,9 @@
+import { CardsList } from "@/components/cards/cards-list";
+
 export default function ConsumersPage() {
-  return <div>Consumer</div>;
+  return (
+    <div>
+      <CardsList />
+    </div>
+  );
 }
