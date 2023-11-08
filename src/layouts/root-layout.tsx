@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 
 import { Sidebar } from "@/components/sidebar/sidebar";
+import { Navbar } from "@/components/navbar/navbar";
 
 export default function RootLayout() {
   return (
     <div className="h-screen w-screen font-inter flex">
       <Sidebar />
-      <main>
+      <main className="flex flex-col w-full px-12">
+        <Navbar />
         <Outlet />
       </main>
     </div>
