@@ -39,7 +39,9 @@ export function Card({
       </CardHeader>
       <CardContent className="text-sm font-semibold">{body}</CardContent>
       <CardFooter>
-        <Button className="bg-[#313945] text-white">{action}</Button>
+        <Button className="bg-[#313945] text-white" size={"sm"}>
+          {action}
+        </Button>
       </CardFooter>
     </ShadcnCard>
   );

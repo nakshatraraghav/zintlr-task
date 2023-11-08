@@ -22,7 +22,7 @@ export function ManageConsumersCard() {
       </CardHeader>
       <CardContent className="text-sm font-semibold">Actions</CardContent>
       <CardFooter>
-        <Button className="bg-[#313945] text-white">
+        <Button className="bg-[#313945] text-white" size={"sm"}>
           <div className="flex items-center space-x-4">
             <User />
             <div>Add Consumer</div>
