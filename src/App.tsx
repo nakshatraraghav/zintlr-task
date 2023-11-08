@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { router } from "@/router/router";
+import { RouterProvider } from "react-router-dom";
 
 export default function App() {
-  return (
-    <div className="w-screen font-inter h-screen flex items-center justify-center">
-      <Button variant={"ghost"}>Submit</Button>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }

@@ -11,43 +11,50 @@ import Faq from "@/pages/faq";
 import CustomizeDashboard from "@/pages/customize-dashboard";
 
 import ErrorPage from "@/pages/error-page";
+import RootLayout from "@/layouts/root-layout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Dashboard />,
+    element: <RootLayout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/bullion-operations",
-    element: <BullionOperations />,
-  },
-  {
-    path: "/transactions",
-    element: <Transactions />,
-  },
-  {
-    path: "/network",
-    element: <YourNetwork />,
-  },
-  {
-    path: "/consumers",
-    element: <Consumers />,
-  },
-  {
-    path: "/other-operations",
-    element: <OtherOperations />,
-  },
-  {
-    path: "/manage-bank-accounts",
-    element: <ManageBankAccounts />,
-  },
-  {
-    path: "/faq",
-    element: <Faq />,
-  },
-  {
-    path: "/customize-dashboard",
-    element: <CustomizeDashboard />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/bullion-operations",
+        element: <BullionOperations />,
+      },
+      {
+        path: "/transactions",
+        element: <Transactions />,
+      },
+      {
+        path: "/network",
+        element: <YourNetwork />,
+      },
+      {
+        path: "/consumers",
+        element: <Consumers />,
+      },
+      {
+        path: "/other-operations",
+        element: <OtherOperations />,
+      },
+      {
+        path: "/manage-bank-accounts",
+        element: <ManageBankAccounts />,
+      },
+      {
+        path: "/faq",
+        element: <Faq />,
+      },
+      {
+        path: "/customize-dashboard",
+        element: <CustomizeDashboard />,
+      },
+    ],
   },
 ]);
