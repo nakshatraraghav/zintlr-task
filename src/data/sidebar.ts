@@ -12,15 +12,15 @@ import {
 } from "lucide-react";
 
 type Link =
-  | "dashboard"
-  | "bullion-operations"
-  | "transactions"
-  | "network"
-  | "consumers"
-  | "other-operations"
-  | "manage-bank-accounts"
-  | "faq"
-  | "customize-dashboard";
+  | "/dashboard"
+  | "/bullion-operations"
+  | "/transactions"
+  | "/network"
+  | "/consumers"
+  | "/other-operations"
+  | "/manage-bank-accounts"
+  | "/faq"
+  | "/customize-dashboard";
 
 export interface SidebarLinkItem {
   name: string;
@@ -32,46 +32,46 @@ export const sidebarItemData: SidebarLinkItem[] = [
   {
     name: "Dashboard",
     Icon: Home,
-    link: "dashboard",
+    link: "/dashboard",
   },
   {
     name: "Bullion Operations",
     Icon: Beaker,
-    link: "bullion-operations",
+    link: "/bullion-operations",
   },
   {
     name: "Transactions",
     Icon: ArrowLeftRight,
-    link: "transactions",
+    link: "/transactions",
   },
   {
     name: "Your Network",
     Icon: Network,
-    link: "network",
+    link: "/network",
   },
   {
     name: "Consumers",
     Icon: User2,
-    link: "consumers",
+    link: "/consumers",
   },
   {
     name: "Other Operations",
     Icon: GalleryVerticalEnd,
-    link: "other-operations",
+    link: "/other-operations",
   },
   {
     name: "Manage Bank Accounts",
     Icon: Landmark,
-    link: "manage-bank-accounts",
+    link: "/manage-bank-accounts",
   },
   {
     name: "Faq",
     Icon: HelpCircle,
-    link: "faq",
+    link: "/faq",
   },
   {
     name: "Customize Dashboard",
     Icon: Cog,
-    link: "customize-dashboard",
+    link: "/customize-dashboard",
   },
 ];
