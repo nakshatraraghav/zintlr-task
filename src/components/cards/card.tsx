@@ -14,22 +14,30 @@ import { cn } from "@/lib/utils";
 
 interface CardProps {
   Icon: LucideIcon;
+  iconColor: string;
   count: number;
   body: string;
   action: string;
   className: ClassValue;
 }
 
-export function Card({ body, count, action, Icon, className }: CardProps) {
+export function Card({
+  body,
+  count,
+  action,
+  Icon,
+  className,
+  iconColor,
+}: CardProps) {
   return (
     <ShadcnCard className={cn(className, "w-full")}>
       <CardHeader>
         <CardTitle className="flex items-center space-x-4">
-          <Icon />
+          <Icon className={iconColor} />
           <div>{count}</div>
         </CardTitle>
       </CardHeader>
-      <CardContent>{body}</CardContent>
+      <CardContent className="text-sm font-semibold">{body}</CardContent>
       <CardFooter>
         <Button className="bg-[#313945] text-white">{action}</Button>
       </CardFooter>

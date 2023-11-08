@@ -14,13 +14,13 @@ export function ManageConsumersCard() {
   return (
     <ShadcnCard className="bg-[#f6fbfe] min-w-[400px]">
       <CardHeader>
-        <CardTitle className="flex items-center space-x-2 text-base">
+        <CardTitle className="flex items-center space-x-1 text-base text-[#65cefc]">
           <div>Consumer</div>
           <ChevronRight />
           <div>Manage Consumers</div>
         </CardTitle>
       </CardHeader>
-      <CardContent>Actions</CardContent>
+      <CardContent className="text-sm font-semibold">Actions</CardContent>
       <CardFooter>
         <Button className="bg-[#313945] text-white">
           <div className="flex items-center space-x-4">

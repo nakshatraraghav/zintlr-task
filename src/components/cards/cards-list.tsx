@@ -14,6 +14,7 @@ export function CardsList() {
             action={data.action}
             body={data.body}
             className={data.className}
+            iconColor={data.iconColor}
           />
         );
       })}

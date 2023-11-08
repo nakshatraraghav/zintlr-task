@@ -5,6 +5,7 @@ import { ShieldAlert, Contact } from "lucide-react";
 
 interface CardData {
   Icon: LucideIcon;
+  iconColor: string;
   count: number;
   body: string;
   action: string;
@@ -14,23 +15,26 @@ interface CardData {
 export const cardData: CardData[] = [
   {
     Icon: Contact,
+    iconColor: "text-[#b45600]",
     count: 276,
     body: "KYC approval pending",
     action: "View List",
-    className: "bg-gradient-to-bl from-orange-500 to-yellow-300",
+    className: "bg-gradient-to-bl from-[#f0decd] to-[#f9ede2]",
   },
   {
     Icon: ShieldAlert,
+    iconColor: "text-[#d84545]",
     count: 182,
     body: "high risk consumers",
     action: "View List",
-    className: "bg-gradient-to-bl from-red-200 via-red-300 to-yellow-200",
+    className: "bg-gradient-to-bl from-[#f9e6e6] to-[#f4ecef]",
   },
   {
     Icon: Ticket,
+    iconColor: "text-[#4daeff]",
     count: 32,
     body: "tickets open",
     action: "View List",
-    className: "bg-gradient-to-bl from-sky-400 to-cyan-300",
+    className: "bg-gradient-to-bl from-[#e6edf7] to-[#f2f7fe]",
   },
 ];
