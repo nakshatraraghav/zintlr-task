@@ -1,9 +1,11 @@
 import {
   ColumnDef,
   SortingState,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  getFilteredRowModel,
   useReactTable,
   getPaginationRowModel,
 } from "@tanstack/react-table";
@@ -20,6 +22,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
+import { Input } from "@/components/ui/input";
+import { SearchIcon } from "lucide-react";
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -30,6 +35,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   const table = useReactTable({
     data,
@@ -38,8 +44,11 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
     initialState: {
       pagination: {
@@ -50,6 +59,19 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
+      <div className="flex items-center py-4 relative">
+        <Input
+          placeholder="Search Consumers"
+          value={
+            (table.getColumn("consumerName")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event) =>
+            table.getColumn("consumerName")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        />
+        <SearchIcon className="absolute left-[350px] text-zinc-500" />
+      </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
