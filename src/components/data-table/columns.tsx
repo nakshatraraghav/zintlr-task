@@ -1,16 +1,43 @@
 import { TableData } from "@/data/table";
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const columns: ColumnDef<TableData>[] = [
   {
     accessorKey: "consumerName",
-    header: () => <div className="font-bold">Consumer Name</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          className="text-sm font-semibold"
+          onClick={() => {
+            column.toggleSorting(column.getIsSorted() === "asc");
+          }}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "assets",
-    header: () => <div className="font-bold">Amount</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          className="text-sm font-semibold"
+          onClick={() => {
+            column.toggleSorting(column.getIsSorted() === "asc");
+          }}
+        >
+          Assets
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("assets"));
       const formatted = new Intl.NumberFormat("en-US", {
@@ -23,7 +50,20 @@ export const columns: ColumnDef<TableData>[] = [
   },
   {
     accessorKey: "revenue",
-    header: () => <div className="font-bold">Revenue</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          className="text-sm font-semibold"
+          onClick={() => {
+            column.toggleSorting(column.getIsSorted() === "asc");
+          }}
+        >
+          Revenue
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("revenue"));
       const formatted = new Intl.NumberFormat("en-US", {
@@ -41,12 +81,22 @@ export const columns: ColumnDef<TableData>[] = [
       const status = row.getValue("kycStatus");
 
       if (status === "done") {
-        return <Badge className="bg-[#d8e9d0] text-[#27a607]">Done</Badge>;
+        return (
+          <Badge className="bg-[#d8e9d0] text-[#27a607] text-[10px]">
+            Done
+          </Badge>
+        );
       } else if (status === "pending") {
-        return <Badge className="bg-[#ffe9e9] text-[#ff4444]">Pending</Badge>;
+        return (
+          <Badge className="bg-[#ffe9e9] text-[#ff4444] text-[10px]">
+            Pending
+          </Badge>
+        );
       } else if (status === "in-progress") {
         return (
-          <Badge className="bg-[#fff2d0] text-[#dba00a]">In Progress</Badge>
+          <Badge className="bg-[#fff2d0] text-[#dba00a] text-[10px]">
+            In Progress
+          </Badge>
         );
       }
     },
