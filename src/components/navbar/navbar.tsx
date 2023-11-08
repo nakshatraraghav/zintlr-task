@@ -7,7 +7,7 @@ export function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between my-5">
       <SearchBar />
-      <div className="flex items-center space-x-4">
+      <div className="hidden md:flex items-center space-x-4">
         <RightWidgets />
         <div className="mt-4">
           <GoldPriceCard />
