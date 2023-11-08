@@ -20,6 +20,21 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "/",
+        element: (
+          <div>
+            <p>
+              Please navigate to the{" "}
+              <span className="font-bold underline mx-2">Consumers Page</span>
+              using the right sidebar to see the task
+            </p>
+            <p>
+              The right sidebar can be used to navigate between several pages
+            </p>
+          </div>
+        ),
+      },
+      {
         path: "/dashboard",
         element: <Dashboard />,
       },
